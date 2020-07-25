@@ -25,7 +25,7 @@ function recipeSearchCall(userInput) {
 }
 
 //searching here (input: string)
-recipeSearchCall('burrito');
+//recipeSearchCall('burrito');
 
 
 //get searched recipe by recipe.id value
