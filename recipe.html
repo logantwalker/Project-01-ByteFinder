@@ -1,0 +1,192 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <title>Starter Template - Materialize</title>
+
+    <!-- CSS  -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="css/materialize.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+  </head>
+  <body>
+    <nav class="materialize-red-text.text-lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo"></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#"></a></li>
+          <li><a href="#recipes">Recipe Page</a></li>
+          <li><a href="#recipe page">Shopping List Page</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+      </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br /><br />
+        <h1 class="header center orange-text">ByteFinder</h1>
+
+        <!-- Search Button  -->
+        <div id="cover">
+          <form method="get" action="">
+            <div class="tb">
+              <div class="td">
+                <input
+                  type="text"
+                  placeholder="Search a million recipes & more"
+                  required
+                  style="font-size: 45px;"
+                />
+              </div>
+              <div class="td" id="s-cover">
+                <button type="submit">
+                  <div id="s-circle"></div>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="row center">
+          <h5 class="header col s12 light"></h5>
+        </div>
+        <!-- <div class="row center">
+        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div> -->
+        <br /><br />
+      </div>
+    </div>
+    <br /><br />
+
+    <h4 class="header center orange-text" style="font-weight: bold;">
+      Popular Recipes
+    </h4>
+
+    <div class="container">
+      <div class="section">
+        <!--   Icon Section   -->
+        <div class="row">
+
+          <!-- <h2>Popular Recipes</h2> -->
+
+
+          <div class="col s12 m3" style="color: aqua;">
+            <div class="icon-block">
+              <h2 class="center light-blue-text">
+                <i class="material-icons"></i>
+              </h2>
+              
+              <a
+                href="https://www.cooksrecipes.com/mless/cheese_garden_lasagna_recipe.html"
+                ><img
+                  src="https://www.cooksrecipes.com/recipe_meatless_pics/cheese_garden_lasagna.jpg"
+              /></a>
+
+              <h5 class="center">Cheese Garden Lasagna</h5>
+
+              <p class="light">
+                A fabulous veggie lasagna loaded with garden vegetables and four types of cheese.
+              </p>
+            </div>
+          </div>
+
+          <div class="col s12 m3">
+            <div class="icon-block">
+              <h2 class="center light-blue-text">
+                <i class="material-icons"></i>
+              </h2>
+              
+              <a
+                href="https://www.cooksrecipes.com/dessert/french_chocolate_cheesecake.html"
+                ><img
+                  src="https://www.cooksrecipes.com/recipe_dessert_pics/french_chocolate_cheesecake.jpg"
+              /></a>
+
+              <h5 class="center">French Chocolate Cheesecake</h5>
+
+              <p class="light">
+                If you like cheesecake, chocolate and caramel, you’ll want to try this 1st Prize winning recipe from Marcia Gerdes of Klamath Falls, OR.
+              </p>
+            </div>
+          </div>
+          <div class="col s12 m3">
+            <div class="icon-block">
+              <h2 class="center light-blue-text">
+                <i class="material-icons"></i>
+              </h2>
+              
+              <a
+                href="https://www.cooksrecipes.com/lamb/grilled_lemon_pepper_lamb_chops_recipe.html"
+                ><img
+                  src="https://www.cooksrecipes.com/recipe_lamb_veal_game_pics/grilled_lemon_pepper_lamb_chops.jpg"
+              /></a>
+              
+              <h5 class="center">Grilled Lemon Pepper Lamb Chops</h5>
+
+              <p class="light">
+                We have provided detailed documentation as well as specific code
+                examples to help new users get started. We are also always open
+                to feedback and can answer any questions a user may have about
+                Materialize.
+              </p>
+            </div>
+          </div>
+
+          <div class="col s12 l3">
+            <div class="icon-block">
+              <h2 class="center light-blue-text">
+                <i class="material-icons"></i>
+              </h2>
+              
+              <a
+                href="https://www.cooksrecipes.com/mless/asiago_vegetable_risotto_recipe.html"
+                ><img
+                  src="https://www.cooksrecipes.com/recipe_meatless_pics/asiago_vegetable_risotto.jpg"
+              /></a>
+
+              <h5 class="center">Asiago Vegetable Risotto</h5>
+
+              <p class="light">
+                Comforting, creamy risotto loaded with vegetables like zucchini...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+    </div>
+
+    <footer class="page-footer orange">
+      <div class="container"></div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>
