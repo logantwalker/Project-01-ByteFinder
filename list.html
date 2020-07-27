@@ -13,16 +13,56 @@
 </head>
 
 <body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo center">ByteFinder</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="recipe.html">Recipes</a></li>
-        <li class="active"><a href="list.html">Shopping List</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="row">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo center">ByteFinder</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="recipe.html">Recipes</a></li>
+          <li class="active"><a href="list.html">Shopping List</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="row z-depth-4">
+    <div class="col s6 m6">
+      <div class="card teal lighten-4">
+        <div class="card-content white-text">
+          <span class="card-title">Shopping List</span>
+          <ul>
 
+            <!-- create li items from recipe API -->
+          </ul>
+        </div>
+        <div class="row">
+          <form class="col s6">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">Zip Code</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-action">
+          <a href="#">Stores near me!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s6 m6">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://developers.google.com/maps/solutions/images/storelocator_clothing.png">
+        </div>
+        <div class="card-content">
+          <p>
+          <!-- list of generated results -->
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
   
   <!--  Scripts-->
   <script type='module' src='./main.js'></script>
