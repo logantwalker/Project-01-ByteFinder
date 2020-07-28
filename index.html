@@ -22,9 +22,68 @@
       </ul>
     </div>
   </nav>
+  <!-- search bar to generate top 5 results on the page  -->
+  <div class="container">
+    <div class="row">
+      <form class="col s9 center-align">
+        <div class="row">
+          <div class="input-field col s6 center-align">
+            <input id="icon_search" type="text" class="validate">
+            <i class="material-icons prefix">search</i>
+            <label for="icon_search">Find Recipies</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    // jQuery for carousel (link API popular recipies) maybe code it so it is only
+    //  there before we search and once we search it goes away and results are displayed instead?
 
-  
+    $(document).ready(function () {
+      $('.slider').slider();
+    });
+
+  </script>
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
   <!--  Scripts-->
   <script type='module' src='./main.js'></script>
   <script src="map.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.1.mi
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
