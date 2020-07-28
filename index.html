@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+    ></script>
+   
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://use.fontawesome.com/c924e55352.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>ByteFinder</title>
+    
+  </head>
+
+  <body>
+    <div class="row">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo center">ByteFinder</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="recipe.html">Recipes</a></li>
+            <li><a href="list.html">Shopping List</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    
+    <div class="row">
+            <div class="wrapper">
+                <div class="search_box">
+                    <input type="text" placeholder="what are you looking for?">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+         <h4>Popular Recipes</h4>
+         
+            <!-- carousel code -->
+        <div class="container">
+
+            <div class="carousel carousel-slider">
+                <a href="https://www.bettycrocker.com/recipes/garden-vegetable-lasagna/3ffb442e-024b-4475-a3f0-1cb6d271f947" class="carousel-item">
+                <img src="https://images-gmi-pmc.edge-generalmills.com/ad01f925-8455-4d80-8957-66d6610e97c5.jpg" /></a>
+                <!-- <h5 class="center">Cheese Garden Lasagna<</h5> -->
+                <a href="https://www.bettycrocker.com/recipes/brownie-batter-cheesecake-bars/ac64f878-c093-40b0-b287-0dbfcfef14f0" class="carousel-item">
+                <img src="https://images-gmi-pmc.edge-generalmills.com/70d2fe27-7c37-4058-a7da-1ef2e149069c.jpg" />
+                </a>
+                <a class="carousel-item" href="https://www.bettycrocker.com/recipes/ultimate-chicken-pasta-salad/d0efcd4e-6d71-4783-830d-452860a47ea1"
+                ><img src="https://images-gmi-pmc.edge-generalmills.com/db9f07b9-2505-4b7c-8e94-5c52a29076f6.jpg"
+                /></a>
+                <a class="carousel-item" href="https://www.bettycrocker.com/recipes/grilled-baby-carrots-and-green-beans/fb740742-a753-418f-887e-95375a0811ff"
+                ><img src="https://images-gmi-pmc.edge-generalmills.com/2a60e503-b17f-48bb-b088-ef8bbd278d72.jpg"
+                /></a>
+                <a class="carousel-item" href="https://www.bettycrocker.com/recipes/tuscan-sausage-soup/e2f22d6e-2333-41c7-ae73-ebeeb6c058b8"
+                ><img src="https://images-gmi-pmc.edge-generalmills.com/b4367235-48bc-4043-9f1a-21820458f742.jpg"
+                /></a>
+        </div>
+            
+        <div class="btn red accent-2 waves-effet prev">PREV</div>
+        <div class="btn red accent-2 waves-effet next">NEXT</div>
+        </div>
+
+    </div>
+    
+
+    <!--  Scripts-->
+    <script type="module" src="./main.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></script> -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+          $(".carousel").carousel();
+  
+          // function for next slide
+          $(".next").click(function () {
+            $(".carousel").carousel("next");
+          });
+  
+          //fucntion for prev slide
+          $(".prev").click(function () {
+            $(".carousel").carousel("prev");
+          });
+        });
+      </script>
+  </body>
+</html>
