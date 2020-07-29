@@ -35,6 +35,10 @@
     /* IE 10+ */
     color: #fff;
   }
+
+  .input-field.prefix.active{
+    color:#FFAB00;
+  }
   
   @media screen and (max-width: 425px){
     .search_box{

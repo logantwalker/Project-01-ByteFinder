@@ -1,3 +1,47 @@
+//populating the 'popular recipe' slider
+getPopularRecipes();
+function getPopularRecipes() {
+
+    const apiKey = 'ca76d8942af543f39553ed0542c27990';
+
+    //reporting if api call throws error
+    const onReject = (errThrown) => {
+        console.log(errThrown);
+        console.log(errThrown.responseText);
+    }
+
+    $.ajax({
+        
+        url: "https://api.spoonacular.com/recipes/random?number=4&apiKey=" + apiKey,
+
+    }).then(function (response) {
+
+        var popRecipes = response.recipes;
+        console.log(popRecipes);
+
+        const showRecipes = (recipes) =>{
+            for(let i=0; i<recipes.length; i++){
+                $(`#slider${i}`).attr('src',recipes[i].image);
+                $(`#slider${i}title`).text(recipes[i].title);
+                let summary = recipes[i].summary.split('. ');
+                let oneLine = summary[0];
+                const cleanHTMLresponse = (oneLine) =>{
+                    let splitLine = oneLine.split('<b>')
+                    oneLine = splitLine.join();
+                    splitLine = oneLine.split('</b>');
+                    oneLine = splitLine.join();
+                    
+                    $(`#slider${i}desc`).text(oneLine);
+                }
+                cleanHTMLresponse(oneLine);
+            }
+        }
+
+        showRecipes(popRecipes);
+
+    }, onReject);
+}
+
 //search for recipes 
 function recipeSearchCall(userInput) {
 
@@ -15,7 +59,7 @@ function recipeSearchCall(userInput) {
 
     }).then(function (response) {
 
-        console.log(response.results[1]);
+        console.log(response.results);
         let id = response.results[1].id;
 
         getRecipeCall(id);
@@ -24,8 +68,23 @@ function recipeSearchCall(userInput) {
 
 }
 
-//searching here (input: string)
-//recipeSearchCall('burrito');
+//search for recipes here
+$('#recipe-search').on('change',() => {
+    let userQuery = $('#recipe-search').val();
+    const inputChecker = (input) => {
+        if(parseInt(input)){
+            console.log('number detected')
+        }
+        else{
+            let rawInput = input.replace(/\s+/g,'');
+            console.log(rawInput);
+            //recipeSearchCall(rawInput)
+        }
+    }
+    inputChecker(userQuery);
+    
+})
+
 
 
 //get searched recipe by recipe.id value
