@@ -10,6 +10,12 @@
     width: 50%;
     position: relative;
   }
+/* 
+  #slider{
+    margin-left: auto;
+    align-self: center;
+    align-content: center;
+  } */
   
   .search_box input[type="text"]{
     width: 100%;
