@@ -22,6 +22,10 @@
     color: #fff;
     outline: none;
   }
+
+  .input-field.col label{
+    left: 2rem;
+  }
   
   ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
