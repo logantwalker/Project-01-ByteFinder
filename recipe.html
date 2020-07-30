@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
   <script type='text/javascript' src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
   <title>ByteFinder</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -21,66 +21,60 @@
         <li><a href="list.html">Shopping List</a></li>
       </ul>
     </div>
-  </nav>
-  <div class="container center-align">
-    <div class="row">
-      <div class="col s12">
-        <div class="card large">
-          <div class="card-image">
-            <img src="https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/chorizo-mozarella-gnocchi-bake-cropped.jpg">
-            <span class="card-title">Recipe name</span>
-          </div>
-          <div class="card-content">
-            <div class="row">
-              <div class="col s6">
-                <form action="#">
-                  <p>
-                    <label>
-                      <input type="checkbox" />
-                      <span>ingredient1</span>
-                    </label>
-                    <br>
-                    <label>
-                      <input type="checkbox" />
-                      <span>ingredient2</span>
-                    </label>
-                    <br>
-                    <label>
-                      <input type="checkbox" />
-                      <span>ingredient3</span>
-                    </label>
-                  </p>
-                  <a class="waves-effect amber accent-2 btn">Make Shopping List!</a>
-                </form>
-              </div>
-              <div class="row">
-                <div class="col s6">
-                  <div class="card-content black-text">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                </div>  
-              </div>
-            </div>
-          </div>
+  </nav>    
+
+  <div class='container'>
+    
+    <div class='row' id='search-results-parent'>
+      <div class='row' id='results-row0'></div>
+      <div class='row' id='results-row1'></div>
+      <div class='row' id='results-row2'></div>
+      <div class='row' id='results-row3'></div>
+    </div>
+
+    <div class='row z-depth-5' id='recipeContainer'>
+      <div class='row' style="margin-bottom: 0;">
+        <div class='col s12' id='recipeTitle'></div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="parallax-container">
+        <div class="parallax"><img id='recipeImg'></div>
+      </div>
+
+      <div class='row valign-wrapper' id='recipeStats' style="margin-top: 5px;"></div>
+
+      <div class='row'>
+        <div class='col s10' id='recipeDesc'></div>
+      </div>
+
+      <div class='row'>
+        <div class='col s7'>
+          <h6>Instructions:</h6>
+          <ol id='recipeSteps'>
+          </ol>
+        </div>
+        <div class='col s5'>
+          <h6>Ingredients:</h6>
+          <ul id='recipeIngredients'>
+          </ul>
         </div>
       </div>
-    </div>
-  </div>
-            
 
-  <div class='container' id='search-results-parent'>
-    <div class='row' id='results-row0'></div>
-    <div class='row' id='results-row1'></div>
-    <div class='row' id='results-row2'></div>
-    <div class='row' id='results-row3'></div>
+    </div>
+
+    
+   
+
   </div>
+
+  
 
 
   <!-- Scripts -->
   <script type='module' src='searchRecipe.js'></script>
-  <script src="map.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- <script src="map.js"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
   <script src="js/init.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
