@@ -190,6 +190,8 @@ function storeIngredients(el){
     let itemAmt = $(el).data('amount');
     let itemUnit = $(el).data('unit');
 
+    itemAmt = itemAmt.toFixed(2);
+
     ingredientStorageList.push(new Ingredient(itemName, itemAmt, itemUnit));
 
     localStorage.setItem('shopList',JSON.stringify(ingredientStorageList));
@@ -209,14 +211,17 @@ function initSidebar(){
 }
 
 function populateSideBar(data){
-    data.forEach( item =>{
+    data.forEach( (item,i) =>{
         let listItem = `${item.amount} ${item.unit} ${item.name}`;
-        $('#side-list').append(`<li>${listItem}</li>`);
+        $('#side-list').append(`<li id='${i}'><a style='color:black;position:relative;top:2px' href='#!'><i id='removeItem' class='tiny material-icons'>cancel</i></a>${listItem}</li>`);
     });
     
-    $(document).ready(function(){
-        $('#list-sidebar').show('fold',500);
-    })
+    if($('#list-sidebar').css('display')==='none'){
+        $(document).ready(function(){
+            $('#list-sidebar').show('fold',500);
+        })
+    }
+    
 }
 
 function showRecipePage(){
@@ -226,5 +231,24 @@ function showSearchResults(){
     $('#search-results-parent').show('fold',500);
 }
 
+$('#side-list').click((event) => {
+    let targ = event.target;
+    
+    if($(targ).attr('id')==='removeItem'){
+        let listItem = $($(targ).parent()).parent();
+        let removeIndex = parseInt($(listItem).attr('id'));
+        
+        removeListItem(removeIndex);
+    }
+    else{
+        return
+    }
+});
 
+function removeListItem(index){
+    ingredientStorageList.splice(index,1);
 
+    localStorage.setItem('shopList',JSON.stringify(ingredientStorageList));
+
+    initSidebar();
+}
