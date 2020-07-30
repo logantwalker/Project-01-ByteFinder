@@ -76,6 +76,11 @@
   #list-results{
     display: none;
   }
+
+  .caption{
+    padding: 1%;
+    background-color: rgba(255, 215, 64, 0.5);
+  }
   
   @media screen and (max-width: 425px){
     .search_box{
