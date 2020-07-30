@@ -77,7 +77,8 @@
 
   .caption{
     padding: 1%;
-    background-color: orange;
+    background-color: rgba(255,145,1,0.75);
+
   }
   
   @media screen and (max-width: 425px){
