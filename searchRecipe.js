@@ -194,13 +194,36 @@ function storeIngredients(el){
 
     localStorage.setItem('shopList',JSON.stringify(ingredientStorageList));
 
+    initSidebar();
+
+}
+
+function initSidebar(){
+    $('#side-list').empty();
+    if(JSON.parse(localStorage.getItem('shopList'))){
+        populateSideBar(JSON.parse(localStorage.getItem('shopList')));
+    }
+    else{
+        return;
+    }
+}
+
+function populateSideBar(data){
+    data.forEach( item =>{
+        let listItem = `${item.amount} ${item.unit} ${item.name}`;
+        $('#side-list').append(`<li>${listItem}</li>`);
+    });
+    
+    $(document).ready(function(){
+        $('#list-sidebar').show('fold',500);
+    })
 }
 
 function showRecipePage(){
     $('#recipeContainer').show('drop',300);
 }
 function showSearchResults(){
-    $('#search-results-parent').show('blind',500);
+    $('#search-results-parent').show('fold',500);
 }
 
 
