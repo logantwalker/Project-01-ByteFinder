@@ -47,32 +47,25 @@ function getRecipeCall(id) {
         console.log(response);
 
         //appending title and image for api response
-        $('#testContainer').append(`<h1>${response.title}</h1>`);
-        $('#testContainer').append('<div class="divider"></div>');
-        $('#testContainer').append(`<img class="materialboxed center-align" style='width: 300px; margin-top:5%;' id='${response.id}'>`);
-        $(`#${response.id}`).attr('src', `${response.image}`);
+        $('#recipeTitle').append(`<h1>${response.title}</h1>`);
 
-        //creating div for recipe information
-        let infoEl = `<div class='row valign-wrapper' id='${response.id}-info'></div>`;
-        $('#testContainer').append(infoEl);
-
-        //rendering recipe information and summary
-        $(`#${response.id}-info`).append(`<div style='margin-top:2%;' class='col'>Servings: ${response.servings}</div>`);
-        $(`#${response.id}-info`).append(`<div style='margin-top:2%;' class='col'>Cook Time: ${response.readyInMinutes} min</div>`);
-        $(`#${response.id}-info`).append(`<div style='margin-top:2%;' class='col'>Likes: ${response.aggregateLikes} <i class="material-icons">thumb_up</i></div>`);
-        $(`#testContainer`).append(`<div class='col s7'>${response.summary}</div`)
-
-        //creating ingredients list
-        $(`#testContainer`).append(`<div class='col s4' id='${response.id}-item-parent'><h4 style='margin-top:0; border-bottom:1px solid #c0c0c0'>Ingredients</h4></div>`);
-        $(`#${response.id}-item-parent`).append(`<ul id='${response.id}-items'></ul>`);
+        //appending recipe image
+        $('#recipeImg').attr('src',response.image);
+        
+        //rendering recipe stats
+        $(`#recipeStats`).append(`<div class='col' style='font-size:1.35rem;'>Servings: ${response.servings}</div>`);
+        $(`#recipeStats`).append(`<div class='col' style='font-size:1.35rem;'>Cook Time: ${response.readyInMinutes} min</div>`);
+        $(`#recipeStats`).append(`<div class='col' style='font-size:1.35rem;'>Likes: ${response.aggregateLikes} <i class="material-icons">thumb_up</i></div>`);
+        
+        //rendering recipe summary
+        $('#recipeDesc').append(response.summary);
 
         //populating ingredients list function
         const listItems = (itemArr) => {
             itemArr.forEach(item => {
 
-                console.log(item.original);
                 let li = `<li style='padding-bottom:3%;'><i style=' vertical-align: bottom'class='material-icons'>add_circle</i> ${item.original}</li>`;
-                $(`#${response.id}-items`).append(li);
+                $(`#recipeIngredients`).append(li);
 
             })
 
@@ -82,27 +75,27 @@ function getRecipeCall(id) {
         listItems(response.extendedIngredients);
 
         //instructions list
-        let listParent = `<div class='col s6'><ol id='${response.id}-steps'>Instructions</ol></div>`;
-        $('#testContainer').append(listParent);
-
         const listSteps = (stepArr) => {
             stepArr.forEach(step => {
-                let li = `<li style='padding:1%;'>${step.step}</li>`
-                $(`#${response.id}-steps`).append(li);
+                let li = `<li style='padding:1%;'>${step.step}</li>`;
+                $(`#recipeSteps`).append(li);
 
             })
 
         };
 
-        listSteps(response.analyzedInstructions[0].steps);
-
+        //some recipes don't have instructions, so we have to check otherwise the rest of the page won't load
+        if(response.analyzedInstructions[0]){
+            listSteps(response.analyzedInstructions[0].steps);
+        }
+        
+        $('#recipeContainer').css('display','inherit');
 
 
     }, onReject);
 }
 
 function searchResultRender(data) {
-    console.log(data);
     for (let i = 0; i < 16; i++) {
         let cardParent = document.createElement('div');
         $(cardParent).addClass('col s4');
@@ -119,7 +112,7 @@ function searchResultRender(data) {
         $(cardContent).addClass('card-content');
         let cardTitle = `<span class="card-title grey-text text-darken-4">${data[i].title}</span>`;
         $(cardContent).append(cardTitle);
-        let recipeLink = `<p><a data-id=${data[i].id}>Read More...</a></p>`;
+        let recipeLink = `<p ><a class='recipe-link' data-id=${data[i].id}>Read More...</a></p>`;
         $(cardContent).append(recipeLink);
 
         $(cardBody).append(cardContent);
@@ -144,3 +137,22 @@ function searchResultRender(data) {
     }
 
 }
+
+$("#search-results-parent").click((event) =>{
+    let targ =event.target;
+    let id = $(targ).data('id');
+
+    if(id){
+        $('#search-results-parent').css('display','none');
+        getRecipeCall(id);
+    }
+    else{
+        return;
+    }
+
+    $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+})
+
+
