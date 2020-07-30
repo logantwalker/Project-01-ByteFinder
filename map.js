@@ -4,7 +4,7 @@ var maxLat;
 var minLon;
 var maxLon;
 
-// const apiKey = "pk.eyJ1IjoiYXNtYTE3IiwiYSI6ImNrZDNteHVoMjEyOWoyd252azVmMWxpODEifQ.erDAisasRWCXLTYIC4ojyg";
+const apiKey = "pk.eyJ1IjoiYXNtYTE3IiwiYSI6ImNrZDNteHVoMjEyOWoyd252azVmMWxpODEifQ.erDAisasRWCXLTYIC4ojyg";
 
 // Reporting if API call throws error
 const onReject = (errThrown) => {
@@ -28,7 +28,7 @@ if (navigator.geolocation) {
     console.log(showPosition);
                                                 
     $.ajax({
-      url: `https://api.mapbox.com/geocoding/v5/mapbox.places/supermarket%20groceries%20grocery%20market%20super.json?bbox=${minLon},${minLat},${maxLon},${maxLat}&limit=4&access_token=${apiKey}`,
+      url: `https://api.mapbox.com/geocoding/v5/mapbox.places/supermarket%20groceries%20grocery%20market%20super.json?bbox=${minLon},${minLat},${maxLon},${maxLat}&limit=5&access_token=${apiKey}`,
       method: "GET",
     }).then(function (response) {
       console.log(response);
@@ -39,6 +39,9 @@ if (navigator.geolocation) {
           var link = "https://www.google.com/maps/dir//" + response.features[i].place_name.split(' ').join('+');
           console.log(currentLocation);
           console.log(link);
+
+          // Appending store names and store addresses 
+          $('#stores').append(`<p>${response.features[i].place_name}</p>`);
       }
     });
     return showPosition;
