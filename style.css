@@ -79,7 +79,11 @@
 
   .caption{
     padding: 1%;
+<<<<<<< Updated upstream
     background-color: rgba(255, 215, 64, 0.5);
+=======
+    background-color: rgba(255,145,1,0.75);
+>>>>>>> Stashed changes
   }
   
   @media screen and (max-width: 425px){
