@@ -89,8 +89,10 @@ function getRecipeCall(id) {
             listSteps(response.analyzedInstructions[0].steps);
         }
         
-        $('#recipeContainer').css('display','inherit');
-
+        // $('#recipeContainer').css('display','inherit');
+        $(document).ready(function(){
+            showRecipePage();
+        })
 
     }, onReject);
 }
@@ -135,7 +137,9 @@ function searchResultRender(data) {
             $(row).append(cardParent);
         }
     }
-
+    $(document).ready(function(){
+        showSearchResults();
+    })
 }
 
 //navigate to recipe information 'page'
@@ -145,15 +149,16 @@ $("#search-results-parent").click((event) =>{
 
     if(id){
         $('#search-results-parent').css('display','none');
+
         getRecipeCall(id);
     }
     else{
         return;
     }
 
-    $(document).ready(function(){
-        $('.parallax').parallax();
-      });
+    // $(document).ready(function(){
+        
+    //   });
 })
 
 //add ingredient to local storage
@@ -190,5 +195,13 @@ function storeIngredients(el){
     localStorage.setItem('shopList',JSON.stringify(ingredientStorageList));
 
 }
+
+function showRecipePage(){
+    $('#recipeContainer').show('drop',300);
+}
+function showSearchResults(){
+    $('#search-results-parent').show('blind',500);
+}
+
 
 
