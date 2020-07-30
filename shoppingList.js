@@ -1,4 +1,3 @@
-
 let shoppingList = JSON.parse(localStorage.getItem('shopList'));
 
 init();
@@ -16,7 +15,7 @@ function init(){
 }
 
 function renderListItems(items){
-    items.forEach( item =>{
+    items.forEach( (item) =>{
         let listItem = `${item.amount} ${item.unit} ${item.name}`;
         $('#shopping-list').append(`<li>${listItem}</li>`);
     })
