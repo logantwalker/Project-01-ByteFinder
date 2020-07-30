@@ -23,7 +23,7 @@
     border: 2px solid #fff;
     border-radius: 10px;
     font-size: 18px;
-    color: #fff;
+    color: black;
     outline: none;
   }
 
@@ -78,7 +78,6 @@
   .caption{
     padding: 1%;
     background-color: rgba(255,145,1,0.75);
-
   }
   
   @media screen and (max-width: 425px){
