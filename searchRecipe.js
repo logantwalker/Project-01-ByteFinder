@@ -64,7 +64,7 @@ function getRecipeCall(id) {
         const listItems = (itemArr) => {
             itemArr.forEach(item => {
 
-                let li = `<li style='padding-bottom:3%;'><i style=' vertical-align: bottom'class='material-icons'>add_circle</i> ${item.original}</li>`;
+                let li = `<li style='padding-bottom:3%;' data-amount='${item.amount}' data-unit='${item.unit}' data-name='${item.name}'><a href='#!'><i id='add-ingredient' style='vertical-align: bottom'class='material-icons'>add_circle</i></a> ${item.original}</li>`;
                 $(`#recipeIngredients`).append(li);
 
             })
@@ -138,6 +138,7 @@ function searchResultRender(data) {
 
 }
 
+//navigate to recipe information 'page'
 $("#search-results-parent").click((event) =>{
     let targ =event.target;
     let id = $(targ).data('id');
@@ -154,5 +155,40 @@ $("#search-results-parent").click((event) =>{
         $('.parallax').parallax();
       });
 })
+
+//add ingredient to local storage
+
+class Ingredient{
+    constructor(name, amount, unit){
+        this.name= name
+        this.amount= amount
+        this.unit = unit
+    }
+}
+
+$('#recipeIngredients').click((event) => {
+    let targ = event.target;
+    
+    if($(targ).attr('id')==='add-ingredient'){
+        let listItem = $($(targ).parent()).parent();
+        storeIngredients(listItem);
+    }
+    else{
+        return
+    }
+});
+
+const ingredientStorageList = [];
+
+function storeIngredients(el){
+    let itemName = $(el).data('name');
+    let itemAmt = $(el).data('amount');
+    let itemUnit = $(el).data('unit');
+
+    ingredientStorageList.push(new Ingredient(itemName, itemAmt, itemUnit));
+
+    localStorage.setItem('shopList',JSON.stringify(ingredientStorageList));
+
+}
 
 
