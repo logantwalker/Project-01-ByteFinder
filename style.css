@@ -61,6 +61,21 @@
   #search-results-parent{
     display: none;
   }
+  #list-sidebar{
+    display: none;
+    position: fixed;
+    left:0%;
+    top:30%;
+    padding: 2%;;
+    padding-left: 1%;
+
+    background: rgba(255,145,1,0.75);
+    
+  }
+
+  #list-results{
+    display: none;
+  }
   
   @media screen and (max-width: 425px){
     .search_box{
