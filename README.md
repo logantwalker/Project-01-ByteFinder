@@ -12,7 +12,7 @@ single term searches work the best with this API
 
 ## Viewing Search Results
 
-![Search Results](readme-img/searchRecipe.png)
+![Search Results](readme-img/searchResults.png)
 
 12 search results are rendered. Press 'Read More...' to see recipe information.
 
@@ -35,5 +35,6 @@ the cancel button on the sidebar removes the item next to it.
 
 view your list and near-by stores
 
+```
 Front-End Team: Antony Jones & Eugenia Solana
 Back-End Team: Asmaa Aboasha & Logan Walker
